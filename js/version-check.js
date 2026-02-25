@@ -44,7 +44,7 @@ async function checkForUpdates() {
         
         try {
             // 尝试使用代理URL获取最新版本
-            const proxyPromise = fetchVersion(VERSION_URL.PROXY, '代理请求失败');
+            const proxyPromise = fetchVersion(VERSION_URL.DIRECT, '代理请求失败');
             const timeoutPromise = new Promise((_, reject) => 
                 setTimeout(() => reject(new Error('代理请求超时')), FETCH_TIMEOUT)
             );
